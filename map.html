@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>NTHU BUS</title>
+  <link href="http://www.iconarchive.com/download/i87036/graphicloads/colorful-long-shadow/Bus.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="map.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU1TGpRMS2lZZ0vbTPtAJapWcsLVnN2MU&callback=initMap"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="reminder.js"></script>
+  <script type="text/javascript" src="epoly.js"></script>
+</head>
+
+<body onload="initialize(); setRoutes()">
+  
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid d-flex align-items-center">
+      <div class="navbar-header mx-auto">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://atisa.sch.id/wp-content/uploads/2018/04/Bus-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          <span class="logo">NTHU BUS</span>
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <button type="button" class="btn btn-danger" onclick="setAlarm()"><i class="fa fa-bell"></i></button>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="map_canvas"></div>
+
+  <div class="popup reminder">
+    <div class="setting">
+      <h3>到站提醒</h3>
+      <select class="form-control selectStop">
+        <option disabled selected>站名</option>
+        <option>大門口</option>
+        <option>蘇格貓底</option>
+        <option>女宿</option>
+        <option>人社院</option>
+        <option>台積館</option>
+        <option>南門</option>
+        <option>弈園</option>
+      </select>
+
+      <select class="form-control selectTime">
+        <option disabled selected>提醒時間</option>
+        <option value="1">1 分鐘前</option>
+        <option value="3">3 分鐘前</option>
+        <option value="5">5 分鐘前</option>
+        <option value="10">10 分鐘前</option>
+      </select>
+
+      <div class="buttons">
+        <button type="button" class="btn btn-secondary cancel" onclick="cancelReminder()">Cancel</button>
+        <button type="button" class="btn btn-primary set" onclick="setReminder()">Set</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup arrive">
+    <div class="setting">
+      <h4>即將到站</h4>
+      <img src="https://myride2.broward.org/myride/css/ico/bus_pointer.svg" width="150" height="150">
+      <button type="button" class="btn btn-secondary snooze" onclick="pauseSound()">OK</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

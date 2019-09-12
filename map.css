@@ -1,0 +1,80 @@
+html {
+    height:100%;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+    font-family: verdana, Helvetica, Arial;
+    background-image: url("https://img.freepik.com/free-photo/white-plain-wall-surface-background_53876-74688.jpg?size=626&ext=jpg");
+}
+
+.logo {
+    font-weight: bolder;
+    margin-left: 12px;
+}
+
+#map_canvas {
+    width: 90%;
+    height: 95%;
+    left: 5%;
+    top: 3%;
+    z-index: 0;
+}
+
+.popup {
+    background: rgba(0, 0, 0, 0.6);
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.setting {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 45%;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+    font-family: Microsoft JhengHei;
+    display: flex;
+}
+
+.form-control {
+    font-family: Microsoft JhengHei;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.form-control select:focus {
+    outline: none;
+}
+
+.cancel, .set {
+    width: 120px;
+    margin: auto;
+}
+
+.snooze {
+    width: 120px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
